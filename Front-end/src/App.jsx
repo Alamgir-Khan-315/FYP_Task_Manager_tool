@@ -20,7 +20,7 @@ import { ScreenRecordingProvider } from "./components/contextapi/RecordingContex
 
 import User_guaid from "./pages/Need help/User guaid/User-Guaid";
 import FAQ from "./pages/Need help/FAQ/FAQ";
-import Contact from "./pages/Need help/Contact/contact";
+import Contact from "./pages/Need help/Contact/Contact";
 import Task_Report from "./pages/Task Report/Report";
 import Resource_Management from "./pages/Task Report/Resource Management/Resource";
 
