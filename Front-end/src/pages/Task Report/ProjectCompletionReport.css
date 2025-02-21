@@ -1,0 +1,98 @@
+/* General Layout Improvements */
+.report-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f3e5f5; /* Light Purple Background */
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+.report-container h2 {
+  text-align: center;
+  color: #6a0dad;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Report Sections */
+.report-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.report-section strong {
+  color: #333;
+  font-size: 16px;
+}
+
+.report-section span,
+.report-section p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* File Download Section */
+.report-section a {
+  color: #6a0dad;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Action Buttons */
+.report-actions {
+  display: flex;
+  justify-content: space-between; /* Align buttons properly */
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.export-btn,
+.print-btn {
+  background-color: transparent;
+  color: #6a0dad;
+  border: 2px solid #6a0dad;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.export-btn:hover,
+.print-btn:hover {
+  background-color: #6a0dad;
+  color: white;
+}
+
+/* Resource Management Button Placement */
+.resource-btn {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: 0.3s;
+  margin-left: auto; /* Align to the leftmost corner */
+}
+
+.resource-btn:hover {
+  background-color: #5a0099;
+}
+
+/* Footer */
+.report-footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #777;
+}

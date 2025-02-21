@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.17",
     "@reduxjs/toolkit": "^2.1.0",
     "clsx": "^2.0.0",
+    "file-saver": "^2.0.5",
     "firebase": "^10.14.1",
     "html2canvas": "^1.4.1",
     "moment": "^2.30.1",

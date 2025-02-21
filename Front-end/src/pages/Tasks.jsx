@@ -5,7 +5,10 @@ import { MdGridView } from "react-icons/md";
 import { useParams, useSearchParams } from "react-router-dom";
 import { Button, Loading, Table, Tabs, Title } from "../components";
 import { AddTask, BoardView, TaskTitle } from "../components/tasks";
-import { useChangeTaskStageMutation, useGetAllTaskQuery } from "../redux/slices/api/taskApiSlice";
+import {
+  useChangeTaskStageMutation,
+  useGetAllTaskQuery,
+} from "../redux/slices/api/taskApiSlice";
 import { useUploadImageMutation } from "../redux/slices/api/taskApiSlice";
 import { TASK_TYPE } from "../utils";
 import { useSelector } from "react-redux";
@@ -53,7 +56,9 @@ const Tasks = () => {
 
   useEffect(() => {
     if (data?.tasks && Array.isArray(data.tasks)) {
-      const inProgressTask = data.tasks.find((task) => task.stage === "in progress");
+      const inProgressTask = data.tasks.find(
+        (task) => task.stage === "in progress"
+      );
       if (inProgressTask) {
         handleScreenShareStart(inProgressTask._id);
         return;
@@ -112,7 +117,9 @@ const Tasks = () => {
 
   const handleScreenShareStart = async (taskId) => {
     try {
-      const stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+      const stream = await navigator.mediaDevices.getDisplayMedia({
+        video: true,
+      });
       console.log("Stream received:", stream);
 
       if (videoRef.current) {
@@ -155,12 +162,33 @@ const Tasks = () => {
         <Tabs tabs={TABS} setSelected={setSelected}>
           {!status && (
             <div className="w-full flex justify-between gap-4 md:gap-x-12 py-4">
-              <TaskTitle label="To Do" className={TASK_TYPE.todo} count={data?.tasks.filter(task => task.stage === "todo").length || 0} />
-              <TaskTitle label="In Progress" className={TASK_TYPE["in progress"]} count={data?.tasks.filter(task => task.stage === "in progress").length || 0} />
-              <TaskTitle label="Completed" className={TASK_TYPE.completed} count={data?.tasks.filter(task => task.stage === "completed").length || 0} />
+              <TaskTitle
+                label="To Do"
+                className={TASK_TYPE.todo}
+                count={
+                  data?.tasks.filter((task) => task.stage === "todo").length ||
+                  0
+                }
+              />
+              <TaskTitle
+                label="In Progress"
+                className={TASK_TYPE["in progress"]}
+                count={
+                  data?.tasks.filter((task) => task.stage === "in progress")
+                    .length || 0
+                }
+              />
+              <TaskTitle
+                label="Completed"
+                className={TASK_TYPE.completed}
+                count={
+                  data?.tasks.filter((task) => task.stage === "completed")
+                    .length || 0
+                }
+              />
             </div>
           )}
-
+          {/* {data?.tasks === "completed" ? <div>completed</div> : <div>no</div>} */}
           {selected === 0 ? (
             <BoardView tasks={data?.tasks} />
           ) : (

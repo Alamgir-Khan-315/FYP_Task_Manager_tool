@@ -21,6 +21,8 @@ import { ScreenRecordingProvider } from "./components/contextapi/RecordingContex
 import User_guaid from "./pages/Need help/User guaid/User-Guaid";
 import FAQ from "./pages/Need help/FAQ/FAQ";
 import Contact from "./pages/Need help/Contact/contact";
+import Task_Report from "./pages/Task Report/Report";
+import Resource_Management from "./pages/Task Report/Resource Management/Resource";
 
 function Layout() {
   const { user } = useSelector((state) => state.auth);
@@ -116,6 +118,11 @@ const App = () => {
                 <Route path="/User_guaid" element={<User_guaid />} />
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/Contact" element={<Contact />} />
+                <Route path="/task_report" element={<Task_Report />} />
+                <Route
+                  path="/resource-management"
+                  element={<Resource_Management />}
+                />
 
                 <Route path="/trashed" element={<Trash />} />
                 <Route path="/task/:id" element={<TaskDetail />} />
