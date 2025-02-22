@@ -349,6 +349,8 @@ const TaskDetail = () => {
     localStorage.setItem("Task_Data", JSON.stringify(data));
   }
 
+  const User_Role = JSON.parse(localStorage.getItem("userInfo"));
+
   return (
     <div className="w-full flex flex-col gap-3 mb-4 overflow-y-hidden">
       {/* task detail */}
@@ -357,17 +359,28 @@ const TaskDetail = () => {
       </h1>
       {console.log(data)}
       {/* ------------------------------------------------- */}
-      {data?.task.stage === "completed" && (
-        <Link to="/task_report">
-          <div
-            className="relative w-fit left-[89%] top-[3rem]
-        cursor-pointer bg-blue-500 text-white font-semibold text-sm p-2 px-3 rounded-lg"
-            onClick={LocalStorage_project_detail}
-          >
-            Task Report
-          </div>
-        </Link>
+
+      {User_Role && User_Role.role === "Admin" ? (
+        <div>
+          {data?.task?.stage === "completed" && (
+            <Link to="/task_report">
+              <div
+                className="relative w-fit left-[89%] top-[3rem] cursor-pointer bg-blue-500 text-white font-semibold text-sm p-2 px-3 rounded-lg"
+                onClick={LocalStorage_project_detail}
+              >
+                Task Report
+              </div>
+            </Link>
+          )}{" "}
+        </div>
+      ) : (
+        <div>
+          {data?.task?.stage === "completed" && (
+            <div className="relative w-fit h-[2rem] left-[89%] top-[3rem] text-white font-semibold text-sm p-2 px-3 rounded-lg"></div>
+          )}{" "}
+        </div>
       )}
+
       <Tabs tabs={TABS} setSelected={setSelected}>
         {selected === 0 ? (
           <>
