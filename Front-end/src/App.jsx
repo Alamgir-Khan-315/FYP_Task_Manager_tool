@@ -23,6 +23,7 @@ import FAQ from "./pages/Need help/FAQ/FAQ";
 import Contact from "./pages/Need help/Contact/Contact";
 import Task_Report from "./pages/Task Report/Report";
 import Resource_Management from "./pages/Task Report/Resource Management/Resource";
+import Chat from "./pages/Chat/chat";
 
 function Layout() {
   const { user } = useSelector((state) => state.auth);
@@ -115,6 +116,7 @@ const App = () => {
                 <Route path="/in-progress/:status?" element={<Tasks />} />
                 <Route path="/todo/:status?" element={<Tasks />} />
 
+                <Route path="/chat" element={<Chat />} />
                 <Route path="/User_guaid" element={<User_guaid />} />
                 <Route path="/FAQ" element={<FAQ />} />
                 <Route path="/Contact" element={<Contact />} />

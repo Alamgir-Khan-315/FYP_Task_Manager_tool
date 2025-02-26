@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { setOpenSidebar } from "../redux/slices/authSlice";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import { CiChat1 } from "react-icons/ci";
 
 const linkData = [
   {
@@ -41,6 +42,11 @@ const linkData = [
     icon: <MdOutlinePendingActions />,
   },
   {
+    label: "Chat",
+    link: "/chat",
+    icon: <CiChat1 />,
+  },
+  {
     label: "Team",
     link: "team",
     icon: <FaUsers />,
@@ -64,7 +70,7 @@ const Sidebar = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const path = location.pathname.split("/")[1];
-  const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 5);
+  const sidebarLinks = user?.isAdmin ? linkData : linkData.slice(0, 6);
 
   const closeSidebar = () => {
     dispatch(setOpenSidebar(false));
